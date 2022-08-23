@@ -1,0 +1,78 @@
+<app-layout>
+  <div class="flex flex-col gap-4">
+    <div
+      class="border rounded-bl-full w-full h-max md:py-20 md:px-32 bg-gray-100"
+    >
+      <div class="flex justify-between">
+        <div class="flex flex-col justify-center gap-4">
+          <p class="font-semibold text-gray-400 text-4xl tracking-wide">
+            Investment Catalog
+          </p>
+          <p class="text-gray-400 text-lg tracking-wide">
+            Premium investments starting from $200
+          </p>
+        </div>
+
+        <div class="relative w-2/5">
+          <input
+            [(ngModel)]="form.search"
+            id="search"
+            type="text"
+            placeholder="Search"
+            class="bg-white w-full h-16 rounded-lg px-4 text-gray-500 antialiased tracking-wide border-2 border-gray-300 accent-gray-400 placeholder-light-300"
+          />
+          <div class="absolute inset-y-4 right-5">
+            <i class="uil uil-search text-2xl text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 md:px-40 my-4">
+      <p class="text-lg font-medium tracking-wide text-gray-600">Filter by:</p>
+
+      <!-- <div class="flex gap-2">
+            <select name="duration" id="" [(ngModel)]="form.duration" class="bg-white h-16 rounded-lg px-4 text-gray-500 antialiased tracking-wide border-2 border-gray-300 accent-gray-400 placeholder-light-300">
+                <option [value]="0" disabled selected>
+                    Duration
+                </option>
+                <option *ngFor="let duration of durations" [value]="duration.days">
+                    {{duration.days}} days
+                </option>
+            </select>
+        </div> -->
+
+      <div class="flex flex-row items-center gap-4">
+        <investment-filter-select
+          label="Duration"
+          [initial]="0"
+          [items]="durations"
+          [model]="form.duration"
+          id="search-duration"
+          prop1="days"
+          append="days"
+        ></investment-filter-select>
+
+        <investment-filter-select
+          label="Partner"
+          initial=""
+          [items]="partners"
+          [model]="form.partner"
+          id="search-partners"
+          prop1="name"
+          append=""
+        ></investment-filter-select>
+
+        <investment-filter-select
+          label="Peers"
+          initial=""
+          [items]="peers"
+          [model]="form.peers"
+          id="search-peers"
+          prop1="range"
+          append=""
+        ></investment-filter-select>
+      </div>
+    </div>
+  </div>
+</app-layout>

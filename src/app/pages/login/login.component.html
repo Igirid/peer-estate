@@ -1,0 +1,68 @@
+<div class="max-w-screen-xl mx-auto rounded-xl">
+  <div class="flex h-max gap-x-10 my-2">
+    <div class="flex flex-col gap-y-4 w-1/2 py-2">
+      <div class="p-2 flex flex-col gap-y-2">
+        <p class="text-2xl antialiased font-bold tracking-wide text-gray-600">
+          Login
+        </p>
+        <p class="text-lg antialiased font-medium tracking-wide text-gray-600">
+          Sign in and find partners
+        </p>
+      </div>
+
+      <div class="p-2 flex flex-col gap-4">
+        <!-- <div class="flex justify-between items-center">
+          <label for="#name">Name</label>
+          <input
+            [(ngModel)]="form.name"
+            id="name"
+            placeholder="Jane Doe"
+            class="bg-white w-2/3 h-12 rounded-lg px-4 text-gray-500 antialiased tracking-wide border-2 border-gray-300 accent-gray-400 placeholder-light-300"
+          />
+        </div> -->
+
+        <auth-input-group
+          [id]="'email'"
+          [label]="'Email'"
+          [model]="form.email"
+          [placeholder]="'janedoe@gmail.com'"
+          [type]="'email'"
+        ></auth-input-group>
+        <auth-input-group
+          [id]="'password'"
+          [label]="'Password'"
+          [model]="form.password"
+          [placeholder]="'password'"
+          [type]="'password'"
+        ></auth-input-group>
+      </div>
+
+      <div class="border-gray-200 border-t mx-2 py-4 flex flex-col gap-y-4">
+        <auth-check-group
+          [id]="'remember'"
+          [label]="'Remember me'"
+          [model]="form.remember"
+        ></auth-check-group>
+      </div>
+
+      <div class="flex flex-col gap-y-4">
+        <div class="flex self-end px-2">
+          <event-btn (newEvent)="login()" [content]="'Sign in'"></event-btn>
+        </div>
+        <div class="flex self-center">
+          <p class="text-gray-400 text-base">
+            Don't an account?
+
+            <a href="" class="text-gray-500 text-base tracking-wide">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="min-h-full w-1/2 rounded-sm border bg-gray-300 rounded-r-xl"
+    ></div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

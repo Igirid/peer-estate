@@ -1,0 +1,19 @@
+<nav>
+  <div class="flex justify-between items-center mx-auto w-10/12 h-24 py-4">
+    <a class="text-gray-400 text-xl">Peer Estate</a>
+    <div class="flex justify-center items-center gap-x-4">
+      <a class="text-gray-400 text-base" href="#">Home</a>
+      <a class="text-gray-400 text-base" href="#">Features</a>
+      <a class="text-gray-400 text-base" href="#">Pricing</a>
+      <a class="text-gray-400 text-base" href="#">Testimonials</a>
+      <a class="text-gray-400 text-base" href="#">FAQ</a>
+    </div>
+    <div class="flex justify-center items-center gap-x-4">
+      <a class="text-gray-500 text-base" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Log in</a>
+      <!-- <a class="text-gray-400 text-xs rounded-md border border-gray-700 py-2 px-4 " href="#">Sign up</a> -->
+      <app-nav-btn [content]="'Sign up'" path="/signup"></app-nav-btn>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
